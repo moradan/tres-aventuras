@@ -7,37 +7,30 @@
 /* Toda esta seccion esta desactivada hasta que vuelva a intentar conectar con IG
 
 /** hace un pedido HTTP a instagaram y genera la promesa de obtener los datos */
-const token = "IGQVJYS3VoOURWWlVCNTd3ZAGJWWVQzejVpYTR2TWtZAWlBSbTdBX2tjZAm10RTR6LWlCaXZAEQTl5Qkx2dXVKUnNBX2ZAZASERkT3ZArUEFfNXFTRnJRUnlrcTFZAMmpPdFhqSnhfOE9ndVl1TkRvb2RieHBCMwZDZD";
+const token = "IGQVJWdUp6NlVrYVM1a0VkS2Q5SFFsS3Q4d0pkQmhkRFI5Q2g3c1gybE5lMi1DY0tfU0d6TkcxMG9yaUhQa3JUWW04SnIwRGthSERGanZA1QzF2WHh1b1dpVV9ZARzZAEWXZATZAmFueDRfOFE5VVF3T28wcgZDZD";
 const URL = "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url&access_token=" + token
-/** const pedidoHTTP = fetch(URL).then(revisar).then(extraer); */
+const pedidoHTTP = fetch(URL).then(extraer).then(generarLista);
 
 /** Convierte los datos en formato JSON */
-/*
-function revisar(arg) {
+
+function extraer(arg) {
     return arg.json();
 }
-*/
 
 /** Una vez que la promesa se cumple (los datos llegan del servidor de instagram) esta funcion devuelve un objeto JSON
  *  con todos los datos pedidos.
  */
+async function generarLista(arg) {
+    const listaMedios = await arg.data;
+    const listaVideos = listaMedios.filter((medio) => { return medio.media_type == "VIDEO" });
+    const listaMiniaturas = listaVideos.map((medio) => { return medio.thumbnail_url });
+    const listaElementosGaleria = listaMiniaturas.map(encapsularFoto);
+    const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
+
+    renderizar(cuerpoGaleria);
+}
+
 /*
-async function extraer(arg) {
-    const lista = await arg.data;
-
-    console.log(lista);
-    const root = ReactDOM.createRoot(document.getElementById('galeria-cuerpo'));
-    root.render(<Galeria caption={lista[0].caption} url={lista[0].thumbnail_url} />);
-}
-*/
-
-function encapsularFoto(foto) {
-    const imagen = <Imagen url={foto.url}></Imagen>;
-    const miniatura = <Tarjeta contenido={imagen}></Tarjeta>;
-
-    return miniatura;
-}
-
 async function recopilarFotos() {
     const contenido = await fetch("../data/fotos.json");
     const texto = await contenido.text();
@@ -46,13 +39,18 @@ async function recopilarFotos() {
     const listaElementosGaleria = fotos.map(encapsularFoto);
     const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
 
-    const root = ReactDOM.createRoot(document.querySelector(".lienzo"));
-    root.render(cuerpoGaleria);
+    renderizar(cuerpoGaleria);
 }
 
 recopilarFotos();
+*/
 
+function encapsularFoto(url) {
+    const imagen = <Imagen url={url}></Imagen>;
+    const miniatura = <Tarjeta contenido={imagen}></Tarjeta>;
 
+    return miniatura;
+}
 
 function Imagen(props) {
     return <img src={props.url}></img>;
@@ -60,6 +58,12 @@ function Imagen(props) {
 
 function Tarjeta(props) {
     return <div className="tarjeta">{props.contenido}</div>;
+}
+
+function renderizar(elemento) {
+    const root = ReactDOM.createRoot(document.querySelector(".lienzo"));
+    root.render(elemento);
+
 }
 
 
