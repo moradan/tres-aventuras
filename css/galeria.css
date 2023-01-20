@@ -1,21 +1,16 @@
-body {
-    overflow: hidden;
-}
-
 .lienzo {
     display: block;
 
     height: 100%;
-
-    padding: 30px;
-
-    overflow-y: auto;
+    padding: 0;
 }
 
 .galeria {
     display: flex;
     flex-flow: row wrap;
+    align-content: space-around;
 
+    padding: 30px;
     gap: 20px;
 }
 

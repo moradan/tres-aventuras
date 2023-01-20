@@ -7,7 +7,7 @@
 /* Toda esta seccion esta desactivada hasta que vuelva a intentar conectar con IG
 
 /** hace un pedido HTTP a instagaram y genera la promesa de obtener los datos */
-const token = "IGQVJWdUp6NlVrYVM1a0VkS2Q5SFFsS3Q4d0pkQmhkRFI5Q2g3c1gybE5lMi1DY0tfU0d6TkcxMG9yaUhQa3JUWW04SnIwRGthSERGanZA1QzF2WHh1b1dpVV9ZARzZAEWXZATZAmFueDRfOFE5VVF3T28wcgZDZD";
+const token = "IGQVJXeTdTMWEtWWhBZAmVscjNfaDRHVUZAidlpOVkxqWnluUGxXa29DbFlHM0F6ekY0WEV4ZAVo5U3NCOF9BTlozMU40MWxwS1VwOVR4Q1d3bWNpZAy11OGNhcXVGemFTTUFjR0pfY0lacW5GbFhiRHNhQgZDZD";
 const URL = "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url&access_token=" + token
 const pedidoHTTP = fetch(URL).then(extraer).then(generarLista);
 
@@ -30,26 +30,11 @@ async function generarLista(arg) {
     renderizar(cuerpoGaleria);
 }
 
-/*
-async function recopilarFotos() {
-    const contenido = await fetch("../data/fotos.json");
-    const texto = await contenido.text();
-    const fotos = JSON.parse(texto);
-
-    const listaElementosGaleria = fotos.map(encapsularFoto);
-    const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
-
-    renderizar(cuerpoGaleria);
-}
-
-recopilarFotos();
-*/
-
 function encapsularFoto(url) {
     const imagen = <Imagen url={url}></Imagen>;
     const miniatura = <Tarjeta contenido={imagen}></Tarjeta>;
 
-    return miniatura;
+    return <a>{miniatura}</a>;
 }
 
 function Imagen(props) {
