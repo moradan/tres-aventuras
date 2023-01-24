@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
 
+    list-style: none;
 }
 
 /** Esquema de colores */
@@ -285,6 +286,8 @@ img {
 }
 
 .mosaico-vertical {
+    align-self: stretch;
+
     /* Auto layout */
     display: flex;
     flex-direction: column;
@@ -292,7 +295,6 @@ img {
     justify-content: space-between;
     padding: 0;
 }
-
 
 .articulo {
     /* auto layout */
