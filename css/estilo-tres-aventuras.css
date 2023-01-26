@@ -1,6 +1,8 @@
 /** Import google fonts Outfit */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Source+Sans+Pro:wght@700&display=swap');
 
+
+/* para aplicar a todos los elementos en todas las paginas*/
 *,
 *::after,
 *::before {
@@ -10,6 +12,14 @@
     padding: 0;
 
     list-style: none;
+}
+
+.visible {
+    display: flex;
+}
+
+.invisible {
+    display: none;
 }
 
 /** Esquema de colores */
@@ -108,6 +118,11 @@ img {
     box-shadow: var(--shadow);
 }
 
+h1 {
+    text-align: center;
+}
+
+/* Scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -120,6 +135,7 @@ img {
     background: var(--background);
 }
 
+/* Utilities */
 .lienzo {
     flex: none;
     flex-grow: 1;
