@@ -24,60 +24,10 @@ function Pagina() {
     );
 }
 
-function Contenido() {
-    const [reproductorVisible, setReproductorVisible] = React.useState("invisible");
-    const [listaVideos, setListaVideos] = React.useState([]);
-
-    React.useEffect(() => {
-        pedidoHTTP
-            .then((respuesta) => respuesta.json())
-            .then((contenido) => contenido.data)
-            .then((listaMedios) => {
-                setListaVideos(
-                    listaMedios.filter((medio) => medio.media_type == 'VIDEO')
-                )
-            });
-    }, []);
-
-    if (listaVideos.length == 0) {
-        return (
-            <div className="mosaico-vertical">
-                <h1 className="primary">cargando galeria...</h1>
-            </div>
-        );
-    } else {
-        const listaElementosGaleria = listaVideos.map(encapsularMiniatura);
-        const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
-
-        return (
-            <div className="mosaico-vertical">
-                <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
-                <Player visible={reproductorVisible}></Player>
-            </div>
-        );
-    }
-}
-
-/**
- * Estas tres funciones generan el link al video con la miniatura en una tarjeta.
- * @param {*} video 
- * @returns 
-*/
-function encapsularMiniatura(video) {
-    const imagen = <Imagen url={video.thumbnail_url}></Imagen>;
-    const miniatura = <Tarjeta key={video.id} contenido={imagen}></Tarjeta>;
-
-    return <a href={video.media_url}>{miniatura}</a>;
-}
-
-function Imagen(props) {
-    return <img src={props.url}></img>;
-}
-
-function Tarjeta(props) {
-    return <div className="tarjeta">{props.contenido}</div>;
-}
-
+/** Barra de navegacion
+ * 
+ * 
+ */
 function Barra() {
     return (
         <ul className="barra">
@@ -103,6 +53,65 @@ function ExtremoDerecho() {
     );
 }
 
+
+/** Contenido de la galeria */
+function Contenido() {
+    const [reproductorVisible, setReproductorVisible] = React.useState("invisible");
+    const [listaVideos, setListaVideos] = React.useState([]);
+
+    React.useEffect(() => {
+        pedidoHTTP
+            .then((respuesta) => respuesta.json())
+            .then((contenido) => contenido.data)
+            .then((listaMedios) => {
+                setListaVideos(
+                    listaMedios.filter((medio) => medio.media_type == 'VIDEO')
+                )
+            });
+    }, []);
+
+
+    if (listaVideos.length == 0) {
+        const dummies = [, , ,];
+        const listaElementosGaleria = dummies.map(encapsularMiniatura);
+        const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
+
+        return (
+            <div className="mosaico-vertical">
+                <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
+            </div>
+        );
+    } else {
+        const listaElementosGaleria = listaVideos.map(encapsularMiniatura);
+        const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
+        return (
+            <div className="mosaico-vertical">
+                <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
+                <Player visible={reproductorVisible}></Player>
+            </div>
+        );
+    }
+}
+
+/** Estas tres funciones generan el link al video con la miniatura en una tarjeta.*/
+function encapsularMiniatura(video) {
+    const imagen = <Imagen url={video.thumbnail_url}></Imagen>;
+    const miniatura = <Tarjeta key={video.id} contenido={imagen}></Tarjeta>;
+
+    if (video == null) {
+        return <a></a>
+    } else {
+        return <a>{miniatura}</a>;
+    }
+}
+
+function Imagen(props) {
+    return <img src={props.url}></img>;
+}
+
+function Tarjeta(props) {
+    return <div className="tarjeta">{props.contenido}</div>;
+}
 
 function Lienzo(props) {
     return (

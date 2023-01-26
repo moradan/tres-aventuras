@@ -1,3 +1,9 @@
+/* Tags */
+h1 {
+    text-align: center;
+}
+
+/* Utilities */
 .lienzo {
     display: block;
 
@@ -25,4 +31,6 @@ img {
 
     flex-grow: 0;
     align-self: flex-start;
+
+    background-image: url("../imagenes/icono-imagenes.svg");
 }

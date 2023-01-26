@@ -118,10 +118,6 @@ img {
     box-shadow: var(--shadow);
 }
 
-h1 {
-    text-align: center;
-}
-
 /* Scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
