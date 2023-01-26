@@ -96,12 +96,12 @@ function Contenido() {
 /** Estas tres funciones generan el link al video con la miniatura en una tarjeta.*/
 function encapsularMiniatura(video) {
     const imagen = <Imagen url={video.thumbnail_url}></Imagen>;
-    const miniatura = <Tarjeta key={video.id} contenido={imagen}></Tarjeta>;
+    const miniatura = <Tarjeta contenido={imagen}></Tarjeta>;
 
     if (video == null) {
         return <a></a>
     } else {
-        return <a>{miniatura}</a>;
+        return <a key={video.id}>{miniatura}</a>;
     }
 }
 
