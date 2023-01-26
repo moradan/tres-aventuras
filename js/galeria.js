@@ -45,9 +45,9 @@ function ExtremoDerecho() {
     return (
         <div className="extremo-derecho">
             <ul className="nav-links">
-                <a href="./viaje.html" class="nav-link">vamos de viaje</a>
-                <a href="./galeria.html" class="nav-link nav-resaltado">galeria</a>
-                <a href="./quienes.html" class="nav-link">quiénes somos</a>
+                <a href="./viaje.html" className="nav-link">vamos de viaje</a>
+                <a href="./galeria.html" className="nav-link nav-resaltado">galeria</a>
+                <a href="./quienes.html" className="nav-link">quiénes somos</a>
             </ul>
         </div>
     );
