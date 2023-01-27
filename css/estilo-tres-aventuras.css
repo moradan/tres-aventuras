@@ -28,6 +28,7 @@
     --primary-traslucent: rgb(242, 185, 51, 0.8);
     --secondary: #000;
     --background: #222;
+    --background-traslucent: rgba(0, 0, 0, 0.8);
     --surface: #444;
     --shadow-color: #000;
     --error: #b00020;
@@ -333,8 +334,13 @@ img {
 }
 
 .cuerpo-texto {
+    width: 100%;
+    flex-wrap: wrap;
+
+    padding: 5px;
     margin-top: 10px;
     color: var(--on-surface);
+
     font-family: Outfit;
     font-weight: 200;
     font-size: 18px;

@@ -3,6 +3,11 @@ h1 {
     text-align: center;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+}
+
 /* Utilities */
 .lienzo {
     display: block;
@@ -20,9 +25,36 @@ h1 {
     gap: 20px;
 }
 
-img {
+.cortina {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+
+    background-color: var(--background-traslucent);
+    backdrop-filter: blur(10px);
+    padding-top: 80px;
+
+    /* display: flex; se setea en la rutina que muestra y esconde el reproductor */
+    flex-direction: column;
+    align-items: center;
+}
+
+.reproductor {
+    max-width: 90%;
+    max-height: 90%;
+
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.boton-cerrar {
+    align-self: stretch;
+
+    text-align: right;
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 .tarjeta {

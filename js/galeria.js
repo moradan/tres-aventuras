@@ -57,6 +57,7 @@ function ExtremoDerecho() {
 /** Contenido de la galeria */
 function Contenido() {
     const [reproductorVisible, setReproductorVisible] = React.useState("invisible");
+    const [reproductorUrl, setReproductorUrl] = React.useState("");
     const [listaVideos, setListaVideos] = React.useState([]);
 
     React.useEffect(() => {
@@ -65,43 +66,46 @@ function Contenido() {
             .then((contenido) => contenido.data)
             .then((listaMedios) => {
                 setListaVideos(
-                    listaMedios.filter((medio) => medio.media_type == 'VIDEO')
+                    listaMedios.filter((medio) => medio.media_type == "VIDEO")
                 )
             });
     }, []);
 
 
+    let listaElementosGaleria;
     if (listaVideos.length == 0) {
         const dummies = [, , ,];
-        const listaElementosGaleria = dummies.map(encapsularMiniatura);
-        const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
-
-        return (
-            <div className="mosaico-vertical">
-                <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
-            </div>
-        );
+        listaElementosGaleria = dummies.map(encapsularMiniatura);
     } else {
-        const listaElementosGaleria = listaVideos.map(encapsularMiniatura);
-        const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
-        return (
-            <div className="mosaico-vertical">
-                <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
-                <Player visible={reproductorVisible}></Player>
-            </div>
-        );
+        listaElementosGaleria = listaVideos.map((video) => encapsularMiniatura(video, abrirReproductor));
+    }
+    const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
+    return (
+        <div className="mosaico-vertical">
+            <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
+            <Player url={reproductorUrl} visible={reproductorVisible} cerrar={cerrarReproductor}></Player>
+        </div>
+    );
+
+    function abrirReproductor(e) {
+        setReproductorUrl(e.currentTarget.dataset.url);
+        setReproductorVisible("visible");
+    }
+
+    function cerrarReproductor() {
+        setReproductorVisible("invisible");
     }
 }
 
 /** Estas tres funciones generan el link al video con la miniatura en una tarjeta.*/
-function encapsularMiniatura(video) {
+function encapsularMiniatura(video, abrirReproductor) {
     const imagen = <Imagen url={video.thumbnail_url}></Imagen>;
     const miniatura = <Tarjeta contenido={imagen}></Tarjeta>;
 
     if (video == null) {
         return <a></a>
     } else {
-        return <a key={video.id}>{miniatura}</a>;
+        return <a key={video.id} onClick={abrirReproductor} data-url={video.media_url}>{miniatura}</a>;
     }
 }
 
@@ -121,7 +125,8 @@ function Lienzo(props) {
     );
 }
 
+
 function renderizar(elemento) {
-    const root = ReactDOM.createRoot(document.querySelector("body"));
+    const root = ReactDOM.createRoot(document.querySelector(".root"));
     root.render(elemento);
 }
