@@ -1,4 +1,5 @@
 1. DONE write the CSS for the carrusel component at proyect level
 2. DONE write the CSS for the carrusel component at page level
 3. DONE use .scrollIntoView(true) in JS to scroll the carousel
-4. TODO diseñar la página 'quiénes somos'
+4. DONE diseñar la página 'quiénes somos'
+5. TODO usar react para la galeria

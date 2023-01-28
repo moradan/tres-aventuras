@@ -1,12 +1,3 @@
-.lienzo {
-    align-self: stretch;
-    flex-grow: 1;
-
-    display: flex;
-
-    padding: 20px;
-}
-
 .pagina {
     height: 70vh;
 }
@@ -26,6 +17,7 @@
     padding: 20px;
 }
 
-.titulo, .cuerpo-texto {
+.titulo,
+.cuerpo-texto {
     text-align: center;
 }

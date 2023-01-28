@@ -1,12 +1,25 @@
 /** Import google fonts Outfit */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Source+Sans+Pro:wght@700&display=swap');
 
-*, *::after, *::before {
+
+/* para aplicar a todos los elementos en todas las paginas*/
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 
     margin: 0;
     padding: 0;
 
+    list-style: none;
+}
+
+.visible {
+    display: flex;
+}
+
+.invisible {
+    display: none;
 }
 
 /** Esquema de colores */
@@ -15,6 +28,7 @@
     --primary-traslucent: rgb(242, 185, 51, 0.8);
     --secondary: #000;
     --background: #222;
+    --background-traslucent: rgba(0, 0, 0, 0.8);
     --surface: #444;
     --shadow-color: #000;
     --error: #b00020;
@@ -76,13 +90,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow: hidden;
     position: relative;
+    overflow-x: hidden;
 
     width: 100vw;
     height: 100vh;
     background-color: var(--background);
-    
+
     font-family: 'Outfit', sans-serif;
 }
 
@@ -92,16 +106,43 @@ a {
     cursor: pointer;
 }
 
+img {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+/* Scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
 }
-  
+
 ::-webkit-scrollbar-track {
     background: var(--surface);
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--background);
+}
+
+/* Utilities */
+.lienzo {
+    flex: none;
+    flex-grow: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 30px;
 }
 
 .pie {
@@ -117,6 +158,10 @@ a {
     align-items: flex-start;
     padding: 0px;
     z-index: 3;
+
+    position: sticky;
+    top: 0;
+    left: 0;
 
     /* Inside auto layout */
     flex: none;
@@ -151,7 +196,7 @@ a {
     flex-direction: column;
     align-items: flex-end;
     padding: 0px;
-    
+
     /* Inside auto layout */
     flex: none;
     order: 1;
@@ -208,7 +253,7 @@ a {
     display: block;
     position: relative;
     float: left;
-    
+
     border: none;
     border-radius: 30px;
     background-color: var(--primary);
@@ -224,19 +269,22 @@ a {
 }
 
 .tarjeta {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-
     /* Inside auto layout */
     flex: none;
     order: 0;
-    flex-grow: 0;
+    align-self: stretch;
+    flex-grow: 1;
+
+    background-color: var(--surface);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
 }
 
 .mosaico-horizontal {
@@ -251,6 +299,8 @@ a {
 }
 
 .mosaico-vertical {
+    align-self: stretch;
+
     /* Auto layout */
     display: flex;
     flex-direction: column;
@@ -258,7 +308,6 @@ a {
     justify-content: space-between;
     padding: 0;
 }
-
 
 .articulo {
     /* auto layout */
@@ -275,6 +324,7 @@ a {
     gap: 10px;
     font-size: 16px;
 }
+
 .titulo {
     margin-top: 24px;
     color: var(--on-surface);
@@ -284,8 +334,13 @@ a {
 }
 
 .cuerpo-texto {
+    width: 100%;
+    flex-wrap: wrap;
+
+    padding: 5px;
     margin-top: 10px;
     color: var(--on-surface);
+
     font-family: Outfit;
     font-weight: 200;
     font-size: 18px;
@@ -309,8 +364,8 @@ a {
     padding: 20px;
 }
 
-.contenido{
-    display:flex;
+.contenido {
+    display: flex;
     flex-direction: row;
 
     height: auto;
@@ -322,7 +377,7 @@ a {
     gap: 20px;
 }
 
-.contenido::-webkit-scrollbar{
+.contenido::-webkit-scrollbar {
     display: none;
 }
 
@@ -331,13 +386,13 @@ a {
     flex: none;
     order: 0;
     align-self: stretch;
-    flex-grow: 1;    
+    flex-grow: 1;
 
     width: 100%;
     height: 100%;
 
     padding: 20px;
-    
+
     /* Auto layout */
     display: flex;
     flex-direction: row;
@@ -368,12 +423,3 @@ a {
 .indicador[data-activo] {
     background-color: rgba(242, 185, 51, 1.0);
 }
-
-img {
-    display:flex;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-

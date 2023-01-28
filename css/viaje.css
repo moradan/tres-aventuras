@@ -1,14 +1,14 @@
 /** Import google fonts Outfit */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Source+Sans+Pro:wght@700&display=swap');
 
-#proximo-viaje {
+/* Utilities */
+.lienzo {
     /* Auto layout */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
-    padding-top: 30px;
-    padding-left: 30px;
+    padding: 30px;
 
     /* Inside auto layout */
     flex: none;
@@ -61,14 +61,6 @@
     /* inside auto layout */
     align-self: stretch;
     flex-grow: 1;
-}
-
-.pagina img {
-    width: 95%;
-    height: auto;
-
-    border-radius: 20px;
-    box-shadow: var(--shadow);
 }
 
 .llamado-accion {
