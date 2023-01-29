@@ -1,9 +1,10 @@
-                            <p>Ski, downhill, kayak y trecking; montañas, lagos y la ruta40.</p>
-                            <p>Te llevamos a disfrutar de todo lo que tiene para ofrecer la hermosa ciudad de San Martin de los Andes en la Patagonia Argentina.</p>
-                            <p>Ski y snowboard en el cerro chapelco.</p>Acampe en la montaña
-                            <p>Trecking y ascenso a los picos con las mejores vistas.</p>
-                            <p>Kayak por el lago Lacar</p>
-                            <p>Bicicleteada por la ruta de los 7 lagos.</p>
-                            <p>Bicicleta downhill desde el cerro.</p>
-                            <p>Y mucho más.</p>
-                            <p>Estamos muy ilusionados por compartir toda esta belleza con tu grupo. Anotate.</p>
+<p>Ski, downhill, kayak y trecking; montañas, lagos y la ruta40.</p>
+<p>Te llevamos a disfrutar de todo lo que tiene para ofrecer la hermosa ciudad de San Martin de los Andes en la Patagonia Argentina.</p>
+<p>Ski y snowboard en el cerro chapelco.</p>Acampe en la montaña
+<p>Trecking y ascenso a los picos con las mejores vistas.</p>
+<p>Kayak por el lago Lacar</p>
+<p>Bicicleteada por la ruta de los 7 lagos.</p>
+<p>Bicicleta downhill desde el cerro.</p>
+<p>Y mucho más.</p>
+<p>Estamos muy ilusionados por compartir toda esta belleza con tu grupo.</p>
+<h1>¡Anotate!</h1>

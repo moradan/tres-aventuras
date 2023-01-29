@@ -5,9 +5,11 @@
 */
 
 /** PEDIDO HTTP a instagaram; genera la promesa de obtener los datos */
+/* 
 const token = "IGQVJXeTdTMWEtWWhBZAmVscjNfaDRHVUZAidlpOVkxqWnluUGxXa29DbFlHM0F6ekY0WEV4ZAVo5U3NCOF9BTlozMU40MWxwS1VwOVR4Q1d3bWNpZAy11OGNhcXVGemFTTUFjR0pfY0lacW5GbFhiRHNhQgZDZD";
-const URL = "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url&access_token=" + token
-const pedidoHTTP = fetch(URL);
+const URL = "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url&access_token=" + token;
+*/
+const leerGaleria = fetch('../data/galeria.json');
 
 renderizar(<Pagina></Pagina>);
 
@@ -61,14 +63,9 @@ function Contenido() {
     const [listaVideos, setListaVideos] = React.useState([]);
 
     React.useEffect(() => {
-        pedidoHTTP
-            .then((respuesta) => respuesta.json())
-            .then((contenido) => contenido.data)
-            .then((listaMedios) => {
-                setListaVideos(
-                    listaMedios.filter((medio) => medio.media_type == "VIDEO")
-                )
-            });
+        // leerGaleria.then - obtener los datos del archivo galeria.json
+        // listaMedios <- array de datos del archivo galeria.json
+        // setListaVideos(listaMedios.map((medio) => medio.media_type = 'VIDEO'));
     }, []);
 
 
