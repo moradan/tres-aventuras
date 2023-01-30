@@ -306,6 +306,7 @@ img {
 
 .mosaico-vertical {
     align-self: stretch;
+    flex-grow: 1;
 
     /* Auto layout */
     display: flex;

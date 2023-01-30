@@ -1,23 +1,19 @@
 /** React Tres Aventuras
  * 
- *  Este archivo tiene que tomar las fotos y videos de instagram (por el momento el mío) y mostrarlas
- *  en una tira vertical desplazable usando React.js para repetir una plantilla
+ *  Este archivo tiene que tomar los videos de instagram (por el momento el mío) y mostrarlas
+ *  en una galeria flexible desplazable usando React.js para repetir una plantilla
 */
 
-/** PEDIDO HTTP a instagaram; genera la promesa de obtener los datos */
-/* 
-const token = "IGQVJXeTdTMWEtWWhBZAmVscjNfaDRHVUZAidlpOVkxqWnluUGxXa29DbFlHM0F6ekY0WEV4ZAVo5U3NCOF9BTlozMU40MWxwS1VwOVR4Q1d3bWNpZAy11OGNhcXVGemFTTUFjR0pfY0lacW5GbFhiRHNhQgZDZD";
-const URL = "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url&access_token=" + token;
-*/
+// inicio la lectura asincronica del archivo que contiene info sobre los medios en la cuenta de IG
 const leerGaleria = fetch('../data/galeria.json');
 
+// aqui comienza la construccion de la estructura HTML
 renderizar(<Pagina></Pagina>);
 
 /** El componente Pagina contiene toda la estructura HTML del documento
  *  la cual se forma anidando llamados a los distintos componentes. 
 */
 function Pagina() {
-    /* defino el estado de la pagina que incluye la lista de medios y el estado del reproductor */
     return (
         <div className="mosaico-vertical">
             <Barra></Barra>
@@ -26,10 +22,7 @@ function Pagina() {
     );
 }
 
-/** Barra de navegacion
- * 
- * 
- */
+/* Barra de navegacion */
 function Barra() {
     return (
         <ul className="barra">
@@ -39,10 +32,15 @@ function Barra() {
     );
 }
 
+/* link de inicio */
 function Inicio() {
     return <a href="./index.html" className="inicio"></a>
 }
 
+/* contenedor para el extremo derecho que contiene los demas links de navegacion 
+    TODO: esta funcion deberia leer el earchivo ../data/barra.json y obtener
+    de ahi cada link. la lista de links deberia generarse dinamicamente.
+*/
 function ExtremoDerecho() {
     return (
         <div className="extremo-derecho">
@@ -63,9 +61,9 @@ function Contenido() {
     const [listaVideos, setListaVideos] = React.useState([]);
 
     React.useEffect(() => {
-        // leerGaleria.then - obtener los datos del archivo galeria.json
-        // listaMedios <- array de datos del archivo galeria.json
-        // setListaVideos(listaMedios.map((medio) => medio.media_type = 'VIDEO'));
+        leerGaleria
+            .then((contenido) => { return contenido.json() })
+            .then((listaMedios) => { setListaVideos(listaMedios) });
     }, []);
 
 
@@ -76,7 +74,9 @@ function Contenido() {
     } else {
         listaElementosGaleria = listaVideos.map((video) => encapsularMiniatura(video, abrirReproductor));
     }
+
     const cuerpoGaleria = <div className="galeria">{listaElementosGaleria}</div>;
+
     return (
         <div className="mosaico-vertical">
             <Lienzo cuerpoGaleria={cuerpoGaleria}></Lienzo>
@@ -121,7 +121,6 @@ function Lienzo(props) {
         </div>
     );
 }
-
 
 function renderizar(elemento) {
     const root = ReactDOM.createRoot(document.querySelector(".root"));
