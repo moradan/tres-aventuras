@@ -1,4 +1,11 @@
 {
+  "name": "servidor-tres-aventuras",
+  "version": "1.0",
+  "description": "servidor en node.js para el sitio de tres-aventuras y su pagina de galeria",
+  "scripts": {
+    "start": "./app.js"
+  },
+  "author": "Rodrigo Gimenez",
   "dependencies": {
     "node-static": "^0.7.11"
   }
