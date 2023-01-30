@@ -1,3 +1,3 @@
 # tres-aventuras
-web-app de tres aventuras hecha sin frameworks.
-con google fonts, algunos toques de material design.
+web-app de tres aventuras hecha con algunos toques de React.
+Usando Google Fonts y mis propias hojas de estilo y scripts.
