@@ -5,7 +5,7 @@
 */
 
 // inicio la lectura asincronica del archivo que contiene info sobre los medios en la cuenta de IG
-const leerGaleria = fetch('../data/galeria.json');
+const leerGaleria = fetch('/media').then((data) => { return data.json() });
 
 // aqui comienza la construccion de la estructura HTML
 renderizar(<Pagina></Pagina>);
@@ -61,11 +61,8 @@ function Contenido() {
     const [listaVideos, setListaVideos] = React.useState([]);
 
     React.useEffect(() => {
-        leerGaleria
-            .then((contenido) => { return contenido.json() })
-            .then((listaMedios) => { setListaVideos(listaMedios) });
+        leerGaleria.then((res) => { console.log(res) })
     }, []);
-
 
     let listaElementosGaleria;
     if (listaVideos.length == 0) {
