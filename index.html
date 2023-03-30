@@ -27,15 +27,13 @@
 </head>
 
 <body style="font-family: 'Outfit';">
-    <header class="navbar navbar-expand-lg primario">
-        <div class="container-fluid row">
-            <a href="#" class="navbar-brand col-3 col-md-2 col-lg-1">
-                <img class="img-fluid"
-                    src="/imagenes/logo-linea.svg" 
-                    alt="ir al inicio">
-                <span class="d-inline-block ps-1">tres aventuras</span>    
+    <header class="container-fluid primario m-0 p-0">
+        <div class="navbar navbar-expand-md d-flex align-items-stretch  m-0 p-0">
+            <a href="#" class="navbar-brand col-6 col-md-5 col-lg-4 p-2">
+                <img src="/imagenes/logo-linea.svg" alt="ir al inicio">
+                <span class="d-inline-block fs-4 fw-bolder ps-1">tres aventuras</span>    
             </a>
-            <button class="navbar-toggler col-2 col-sm-1" 
+            <button class="navbar-toggler col-2 col-sm-1 col-lg-1 m-2" 
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#barra-navegador" 
@@ -44,13 +42,19 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a href="" class="nav-link">vamos de viaje</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">galeria</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">quiénes somos</a></li>
+            <nav class="collapse navbar-collapse m-0 p-0" id="barra-navegador">
+                <ul class="navbar-nav d-flex align-items-stretch fs-5 fw-bold">
+                    <li class="nav-item">
+                        <a onclick="navegar(event)" class="nav-link px-2 secundario" data-target="viajemos">vamos de viaje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="navegar(event)" class="nav-link px-2" data-target="galeria">galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="navegar(event)" class="nav-link px-2" data-target="nosotros">quiénes somos</a>
+                    </li>
                 </ul>
-            </div>
+            </nav>
         </div>    
     </header>
 

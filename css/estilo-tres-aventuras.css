@@ -65,3 +65,22 @@
 .en-superficie {
     color: var(--en-superficie)
 }
+
+.navbar-collapse {
+    text-align: end;
+    flex-direction: row-reverse;
+}
+
+.nav-link {
+    cursor: pointer;
+
+}
+
+.nav-link.secundario {
+    color: white;
+}
+
+.navbar-brand img {
+    width: 5rem;
+    height: auto;
+}
