@@ -3,9 +3,7 @@ DONE write the CSS for the carrusel component at page level
 DONE use .scrollIntoView(true) in JS to scroll the carousel
 DONE diseñar la página 'quiénes somos'
 DONE usar react para la galeria
-TODO usar react para index.html
-TODO usar react para viajamos.html
-TODO usar react para quienes.html
-TODO diseñar layout para celular
-TODO diseñar layout para tablet
+DONE reunir todo el site en una web-app
+TODO refactorizar a responsive con Bootstrap
+TODO refactorizar con react
 TODO emprolijar el link para mandar un whatsapp para reutilizar una ventana de whatsapp y la app de opera.
