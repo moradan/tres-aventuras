@@ -21,14 +21,11 @@
     
     <!-- CSS Tres Aventuras -->
     <link href="./css/estilo-tres-aventuras.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="css/viaje.css">
-    <link rel="stylesheet" href="css/galeria.css">
-    <link rel="stylesheet" href="css/quienes.css">
+    <link rel="stylesheet" href="css/embed.css">
 </head>
 
 <body style="font-family: 'Outfit'">
-    <header class="container-fluid primario m-0 p-0">
+    <header class="container-fluid position-sticky top-0 primario m-0 p-0">
         <div class="navbar navbar-expand-md d-flex align-items-stretch  m-0 p-0">
             <a href="#" class="navbar-brand col-6 col-md-5 col-lg-4 p-1">
                 <img id="img-brand" src="/imagenes/logo-linea.svg" alt="ir al inicio">
@@ -64,17 +61,37 @@
         </div>    
     </header>
 
-    <div id="landing" class="position-relative embed-responsive embed-responsive-16by9 d-flex justify-content-center">
-        <video id="video-incio" class="embed-responsive-item" autoplay muted disablePictureInPicture>
-            <source src="./videos/video-inicio-con-chevrones.mp4">
-        </video>
-    </div>
+    <main class="container-fluid m-0 p-0">
+        <div id="landing" class="row position-relative">
+            <video id="video-incio" autoplay muted >
+                <source src="./videos/video-inicio-con-chevrones.mp4" type="video/mp4">
+            </video>
+        </div>
 
-    <div id="viajemos"></div>
+        <div id="viajemos">
+            <h1>viajamos</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laboriosam soluta ullam tempora, eius ea perspiciatis sunt aliquid nostrum itaque aspernatur magnam unde, fuga ad? Sint asperiores omnis quo aliquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam, ex eos molestiae sit nulla repellat accusamus veniam. Ea aperiam ipsa non esse quos fugiat omnis repellendus quibusdam possimus sunt?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quasi inventore eligendi repellat repellendus id nam, illo similique aperiam saepe explicabo quaerat aliquam tempore dicta fuga culpa eveniet et aut alias voluptates perspiciatis. Ratione sequi omnis ab eligendi aut reiciendis?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi.</p>
+        </div>
 
-    <div id="galeria"></div>
+        <div id="galeria">
+            <h1>galeria</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet beatae, dicta magnam quisquam excepturi, doloribus totam odio rerum deserunt perferendis eligendi placeat autem et ex minima impedit saepe ullam reprehenderit!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nostrum, nulla velit ab vel delectus repellat quia quibusdam, quis quaerat dolore voluptatum corporis dolores voluptatibus, id odit! Aperiam, inventore dignissimos.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias libero numquam provident assumenda voluptatum dolore ipsa eaque soluta deleniti, earum rerum, culpa omnis officia ad perferendis tempore veniam asperiores eveniet. Esse possimus perferendis voluptatibus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus sit quis, unde aliquid mollitia.</p>
+        </div>
 
-    <div id="nosotros"></div>
+        <div id="nosotros">
+            <h1>nosotros</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, laudantium natus fugit ea facilis aliquam quo? Eum qui rerum quibusdam, inventore assumenda unde esse explicabo cumque veritatis, dolorum at accusantium?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquid temporibus id a explicabo eligendi autem nesciunt consectetur! Vel modi accusantium neque est quae, possimus veritatis unde porro laudantium similique?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusamus fuga velit vitae? Optio aspernatur reprehenderit vel nisi accusantium cupiditate omnis pariatur totam animi rerum, aperiam obcaecati aliquam blanditiis modi, et velit quae sequi incidunt at labore hic voluptates expedita.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nisi laboriosam, impedit necessitatibus inventore cum facere consequuntur. Molestias, velit amet.</p>
+        </div>
+    </main>
 
     <script src="./js/landing.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>

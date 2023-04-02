@@ -1,6 +1,16 @@
 /** Import google fonts Outfit */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Source+Sans+Pro:wght@700&display=swap');
 
+video {
+    width: 100%;
+    height: auto;
+}
+
+/* necesario para que la navbar se muestre por encima del video*/
+header {
+    z-index: 2;
+}
+
 /** Esquema de colores */
 :root {
     --primario: #f2b933;
