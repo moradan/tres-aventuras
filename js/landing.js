@@ -1,12 +1,13 @@
 function toggleVolumen() {
-    const boton = document.querySelector("#boton-mute");
+    const icono = document.querySelector("#boton-mute .bi");
     const video = document.querySelector("#video-incio");
 
-    if (boton.innerHTML == "volume_off") {
-        boton.innerHTML = "volume_up";
+    icono.classList.toggle("bi-volume-mute-fill");
+    icono.classList.toggle("bi-volume-up-fill");
+
+    if (video.muted) {
         video.muted = false;
     } else {
-        boton.innerHTML = "volume_off";
         video.muted = true;
     }
 }

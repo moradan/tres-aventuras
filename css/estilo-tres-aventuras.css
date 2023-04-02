@@ -1,7 +1,6 @@
 /** Import google fonts Outfit */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Source+Sans+Pro:wght@700&display=swap');
 
-
 /** Esquema de colores */
 :root {
     --primario: #f2b933;
@@ -67,25 +66,29 @@
     color: var(--en-superficie)
 }
 
+/* flota los links de navegacion a la derecha */
 .navbar-collapse {
     text-align: end;
     flex-direction: row-reverse;
 }
 
+/* Necesario porque los nav-links son elementos a sin href lo que causa que no tengan cursor:pointer */
 .nav-link {
     cursor: pointer;
-
 }
 
+/* se asegura que el texto del nav-link resaltado (secundario) no pase a negro (que no se veria) on hover */
 .nav-link.secundario {
     color: white;
 }
 
+/* fija el tamaño del logo de marca*/
 .navbar-brand img {
     width: 6rem;
     height: auto;
 }
 
+/* el scroll-margin-top se asegura de que la navegación no deje parte del contenido detras de la barra de navegación*/
 #viajemos, #galeria, #nosotros {
     scroll-margin-top: 5rem;
 }
