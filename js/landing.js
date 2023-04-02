@@ -1,11 +1,13 @@
 function toggleVolumen() {
-    
-    if (document.getElementById("boton-mute").innerHTML == "volume_off") {
-        document.getElementById("boton-mute").innerHTML = "volume_up";
-        document.getElementById("video-inicio").muted = false;
+    const boton = document.querySelector("#boton-mute");
+    const video = document.querySelector("#video-incio");
+
+    if (boton.innerHTML == "volume_off") {
+        boton.innerHTML = "volume_up";
+        video.muted = false;
     } else {
-        document.getElementById("boton-mute").innerHTML = "volume_off";
-        document.getElementById("video-inicio").muted = true;
+        boton.innerHTML = "volume_off";
+        video.muted = true;
     }
 }
 

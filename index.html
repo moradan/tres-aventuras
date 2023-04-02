@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Titulo y favicon -->
     <title>tres aventuras</title>
     <link rel="icon" href="imagenes/logo-favicon.svg" type="image/x-icon">
@@ -12,13 +13,13 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Outfit&family=Source+Sans+Pro:wght@700&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit&family=Source+Sans+Pro:wght@700&display=swap">
 
-    <!-- CSS Tres Aventuras y Bootstrap -->
+    <!-- Bootstrap CSS and icon web-font -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+    <!-- CSS Tres Aventuras -->
     <link href="./css/estilo-tres-aventuras.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/viaje.css">
@@ -26,12 +27,15 @@
     <link rel="stylesheet" href="css/quienes.css">
 </head>
 
-<body style="font-family: 'Outfit';">
+<body>
     <header class="container-fluid primario m-0 p-0">
         <div class="navbar navbar-expand-md d-flex align-items-stretch  m-0 p-0">
             <a href="#" class="navbar-brand col-6 col-md-5 col-lg-4 p-2">
                 <img src="/imagenes/logo-linea.svg" alt="ir al inicio">
-                <span class="d-inline-block fs-4 fw-bolder ps-1">tres aventuras</span>    
+                <span class="d-inline-block fs-4 fw-bolder ps-1">
+                    tres aventuras
+                    <span id="boton-mute" class="btn d-inline-block" onclick="toggleVolumen()"></span>
+                </span>    
             </a>
             <button class="navbar-toggler col-2 col-sm-1 col-lg-1 m-2" 
                 type="button" 
@@ -58,19 +62,11 @@
         </div>    
     </header>
 
-    <div id="landing" class="video-inicio">
-        <video id="video-inicio" class="video-inicio" autoplay muted disablePictureInPicture>
+    <div id="landing" class="position-relative embed-responsive embed-responsive-16by9 d-flex justify-content-center">
+        <video id="video-incio" class="embed-responsive-item" autoplay muted disablePictureInPicture>
             <source src="./videos/video-inicio-con-chevrones.mp4">
         </video>
     </div>
-
-    <!-- <div class="pie">
-        <div class="espacio-1 derecha">
-            <span class="material-symbols-outlined boton elevado-2" onclick="toggleVolumen()">
-                <a id="boton-mute">volume_off</a>
-            </span>
-        </div>
-    </div> -->
 
     <div id="viajemos"></div>
 
