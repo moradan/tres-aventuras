@@ -1,51 +1,35 @@
 /** Import google fonts Outfit */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Source+Sans+Pro:wght@700&display=swap');
 
-
-/* para aplicar a todos los elementos en todas las paginas*/
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.root {
-    display: flex;
+video {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
-.visible {
-    display: flex;
-}
-
-.invisible {
-    display: none;
+/* necesario para que la navbar se muestre por encima del video*/
+header {
+    z-index: 2;
 }
 
 /** Esquema de colores */
 :root {
-    --primary: #f2b933;
-    --primary-traslucent: rgb(242, 185, 51, 0.8);
-    --secondary: #000;
-    --background: #222;
-    --background-traslucent: rgba(0, 0, 0, 0.8);
-    --surface: #444;
-    --shadow-color: #000;
+    --primario: #f2b933;
+    --primario-transparente: rgb(242, 185, 51, 0.8);
+    --secundario: #000;
+    --fondo: #222;
+    --fondo-transparente: rgba(0, 0, 0, 0.8);
+    --superficie: #444;
+    --sombra-color: #000;
     --error: #b00020;
-    --on-primary: #000;
-    --on-secondary: #fff;
-    --on-surface: #fff;
-    --on-error: #fff;
+    --en-primario: #000;
+    --en-secundario: #fff;
+    --en-superficie: #fff;
+    --en-error: #fff;
 
-    --shadow: 5px 5px 5px black;
+    --sombra: 5px 5px 5px var(--sombra-color);
 }
 
+/* bordes para depurar */
 .borde-rojo {
     border: 1px solid red;
 }
@@ -58,375 +42,63 @@
     border: 1px solid green;
 }
 
-.primary {
-    background-color: var(--primary);
-    color: var(--on-primary);
+/* Tema */
+.primario {
+    background-color: var(--primario);
+    color: var(--en-primario);
 }
 
-.secondary {
-    background-color: var(--secondary);
-    color: var(--on-secondary);
+.secundario {
+    background-color: var(--secundario);
+    color: var(--en-secundario);
 }
 
-.surface {
-    background-color: var(--surface);
-    color: var(--on-surface);
+.superficie {
+    background-color: var(--superficie);
+    color: var(--en-superficie);
 }
 
 .error {
     background-color: var(--error);
-    color: var(--on-error);
+    color: var(-en-error);
 }
 
-.background {
+.fondo {
     background-color: var(--background);
-    color: var(--on-secondary);
+    color: var(--en-secundario);
 }
 
-.on-primary {
-    color: var(--on-primary);
+.en-primario {
+    color: var(--en-primario);
 }
 
-.on-surface {
-    color: var(--on-surface)
+.en-superficie {
+    color: var(--en-superficie)
 }
 
-/** Etiquetas */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    overflow-x: hidden;
-
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--background);
-
-    font-family: 'Outfit', sans-serif;
+/* flota los links de navegacion a la derecha */
+.navbar-collapse {
+    text-align: end;
+    flex-direction: row-reverse;
 }
 
-a {
-    text-decoration: none;
-    color: var(--on-primary);
-    cursor: pointer;
-}
-
-img {
-    flex-grow: 1;
-    flex-shrink: 1;
-
-    max-width: 100%;
-    max-height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 5px;
-    box-shadow: var(--shadow);
-}
-
-/* Scroll bar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--surface);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--background);
-}
-
-/* Utilities */
-.lienzo {
-    flex: none;
-    flex-grow: 1;
-    align-self: stretch;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    padding: 30px;
-}
-
-.pie {
-    position: absolute;
-    bottom: 3%;
-    left: 0;
-}
-
-.barra {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    z-index: 3;
-
-    position: sticky;
-    top: 0;
-    left: 0;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-
-    /* Colors and shapes */
-    background-color: var(--primary-traslucent);
-    backdrop-filter: blur(5px);
-    box-shadow: var(--shadow);
-}
-
-.inicio {
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 5px;
-
-    width: 100px;
-    height: 50px;
-
-    background-image: url("../imagenes/logo+texto-trazo-negro.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.extremo-derecho {
-    /* Autolayout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 0px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 1;
-}
-
-.nav-links {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: stretch;
-    padding: 0px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-}
-
+/* Necesario porque los nav-links son elementos a sin href lo que causa que no tengan cursor:pointer */
 .nav-link {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0 16px;
-
-    font-size: 24px;
-    font-weight: 200;
-    line-height: 50%;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-}
-
-.nav-resaltado {
-    font-weight: bold;
-    color: var(--on-secondary);
-    background-color: var(--secondary);
-    border-left: 5px solid var(--primary);
-}
-
-.boton {
-    width: max-content;
-    height: max-content;
-
-    margin: 5px 20px;
-    padding: 15px;
-
-    display: block;
-    position: relative;
-    float: left;
-
-    border: none;
-    border-radius: 30px;
-    background-color: var(--primary);
-    color: var(--on-primary);
-    box-shadow: var(--shadow);
-
-    font-weight: bold;
-    text-transform: lowercase;
-}
-
-.boton:hover {
     cursor: pointer;
 }
 
-.tarjeta {
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 1;
-
-    background-color: var(--surface);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
+/* se asegura que el texto del nav-link resaltado (secundario) no pase a negro (que no se veria) on hover */
+.secundario .nav-link {
+    color: white;
 }
 
-.mosaico-horizontal {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    padding: 0;
-
-    align-self: stretch;
-    flex-grow: 1;
-}
-
-.mosaico-vertical {
-    align-self: stretch;
-    flex-grow: 1;
-
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-    padding: 0;
-}
-
-.articulo {
-    /* auto layout */
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-}
-
-.bocadillo {
-    /* autoo layout */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 16px;
-}
-
-.titulo {
-    margin-top: 24px;
-    color: var(--on-surface);
-    font-family: Outfit;
-    font-weight: bold;
-    font-size: 36px;
-}
-
-.cuerpo-texto {
-    width: 100%;
-    flex-wrap: wrap;
-
-    padding: 5px;
-    margin-top: 10px;
-    color: var(--on-surface);
-
-    font-family: Outfit;
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 30px;
-}
-
-.chip {
-    padding: 7px;
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-}
-
-.carrusel {
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    width: 100%;
-
-    padding: 20px;
-}
-
-.contenido {
-    display: flex;
-    flex-direction: row;
-
+/* fija el tamaño del logo de marca*/
+.navbar-brand img {
+    width: 6rem;
     height: auto;
-    width: 100%;
-
-    overflow: scroll;
-    scroll-behavior: smooth;
-
-    gap: 20px;
 }
 
-.contenido::-webkit-scrollbar {
-    display: none;
-}
-
-.pagina {
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 1;
-
-    width: 100%;
-    height: 100%;
-
-    padding: 20px;
-
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-.indicadores {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-
-    padding: 20px 0px;
-}
-
-.indicador {
-    display: flex;
-
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-
-    justify-content: center;
-
-    background-color: rgba(242, 185, 51, 0.5);
-}
-
-.indicador[data-activo] {
-    background-color: rgba(242, 185, 51, 1.0);
+/* el scroll-margin-top se asegura de que la navegación no deje parte del contenido detras de la barra de navegación*/
+#landing, #viajemos, #galeria, #nosotros {
+    scroll-margin-top: 5rem;
 }
