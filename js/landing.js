@@ -13,7 +13,7 @@ function toggleVolumen() {
 }
 
 function navegar(e) {
-    const actual = document.querySelector(".nav-link.secundario");
+    const actual = document.querySelector(".nav-item.secundario");
     const link = e.currentTarget;
     const objetivo = document.querySelector("#" + link.dataset.target);
     const menu = document.querySelector(".navbar-collapse");
@@ -24,6 +24,9 @@ function navegar(e) {
         actual.classList.remove("secundario");
     }
     
-    link.classList.add("secundario");
+    if (link.dataset.target!="landing") {
+        link.parentElement.classList.add("secundario");
+    }
+
     objetivo.scrollIntoView();
 }

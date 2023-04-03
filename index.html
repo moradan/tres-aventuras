@@ -26,8 +26,8 @@
 
 <body style="font-family: 'Outfit'">
     <header class="container-fluid position-sticky top-0 primario m-0 p-0">
-        <div class="navbar navbar-expand-md d-flex align-items-stretch m-0 p-2">
-            <a href="#" class="navbar-brand col-6 col-md-5 col-lg-4 p-1">
+        <div class="navbar navbar-expand-md d-flex align-items-stretch m-0 p-0">
+            <a onclick="navegar(event)" class="navbar-brand col-6 col-md-5 col-lg-4 p-1" data-target="landing">
                 <img id="img-brand" src="/imagenes/logo-linea.svg" alt="ir al inicio">
                 <span id="text-brand" class="d-inline-flex align-items-center fs-4 fw-bolder ps-1">
                     tres aventuras
@@ -46,9 +46,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <nav class="collapse navbar-collapse m-0 p-0" id="barra-navegador">
-                <ul class="navbar-nav d-flex align-items-stretch fs-5 fw-bold">
-                    <li class="nav-item">
-                        <a onclick="navegar(event)" class="nav-link px-2 secundario" data-target="viajemos">vamos de viaje</a>
+                <ul class="navbar-nav align-self-stretch fs-5 fw-bold">
+                    <li class="nav-item secundario">
+                        <a onclick="navegar(event)" class="nav-link px-2" data-target="viajemos">vamos de viaje</a>
                     </li>
                     <li class="nav-item">
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="galeria">galeria</a>

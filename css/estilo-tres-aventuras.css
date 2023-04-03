@@ -88,7 +88,7 @@ header {
 }
 
 /* se asegura que el texto del nav-link resaltado (secundario) no pase a negro (que no se veria) on hover */
-.nav-link.secundario {
+.secundario .nav-link {
     color: white;
 }
 
@@ -99,6 +99,6 @@ header {
 }
 
 /* el scroll-margin-top se asegura de que la navegación no deje parte del contenido detras de la barra de navegación*/
-#viajemos, #galeria, #nosotros {
+#landing, #viajemos, #galeria, #nosotros {
     scroll-margin-top: 5rem;
 }
