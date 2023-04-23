@@ -83,7 +83,7 @@ header {
 }
 
 /* Necesario porque los nav-links son elementos a sin href lo que causa que no tengan cursor:pointer */
-.nav-link:hover, .navbar-brand:hover {
+.nav-link, .navbar-brand {
     cursor: pointer;
 }
 
