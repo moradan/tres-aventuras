@@ -26,8 +26,8 @@
 
 <body style="font-family: 'Outfit'">
     <header class="container-fluid position-sticky top-0 primario m-0 p-0">
-        <div class="navbar navbar-expand-md d-flex align-items-stretch m-0 p-0">
-            <a onclick="navegar(event)" class="navbar-brand col-6 col-md-5 col-lg-4 p-1" data-target="landing">
+        <div class="navbar navbar-expand-md d-flex align-items-stretch m-0 py-0 ps-1">
+            <a onclick="navegar(event)" class="navbar-brand col-6 col-md-5 col-lg-4 py-0" data-target="landing">
                 <img id="img-brand" src="./imagenes/logo-linea.svg" alt="ir al inicio">
                 <span id="text-brand" class="d-inline-flex align-items-center fs-4 fw-bolder ps-1">
                     tres aventuras
@@ -36,7 +36,7 @@
                     </span>
                 </span>    
             </a>
-            <button class="navbar-toggler col-2 col-sm-1 col-lg-1 m-2" 
+            <button class="navbar-toggler m-2" 
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#barra-navegador" 
@@ -61,36 +61,36 @@
         </div>    
     </header>
 
-    <main class="container-fluid m-0 p-2">
-        <div id="landing" class="row position-relative">
+    <main class="container-fluid m-0 p-0">
+        <section id="landing" class="row g-0 position-relative">
             <video id="video-incio" autoplay muted >
                 <source src="./videos/video-inicio-con-chevrones.mp4" type="video/mp4">
             </video>
-        </div>
+        </section>
 
-        <div id="viajemos" class="mt-5">
+        <section id="viajemos" class="mt-5 px-3">
             <h1>viajemos</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laboriosam soluta ullam tempora, eius ea perspiciatis sunt aliquid nostrum itaque aspernatur magnam unde, fuga ad? Sint asperiores omnis quo aliquam.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam, ex eos molestiae sit nulla repellat accusamus veniam. Ea aperiam ipsa non esse quos fugiat omnis repellendus quibusdam possimus sunt?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quasi inventore eligendi repellat repellendus id nam, illo similique aperiam saepe explicabo quaerat aliquam tempore dicta fuga culpa eveniet et aut alias voluptates perspiciatis. Ratione sequi omnis ab eligendi aut reiciendis?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi.</p>
-        </div>
+        </section>
 
-        <div id="galeria" class="mt-5">
+        <section id="galeria" class="mt-5 px-3">
             <h1>galeria</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet beatae, dicta magnam quisquam excepturi, doloribus totam odio rerum deserunt perferendis eligendi placeat autem et ex minima impedit saepe ullam reprehenderit!</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nostrum, nulla velit ab vel delectus repellat quia quibusdam, quis quaerat dolore voluptatum corporis dolores voluptatibus, id odit! Aperiam, inventore dignissimos.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias libero numquam provident assumenda voluptatum dolore ipsa eaque soluta deleniti, earum rerum, culpa omnis officia ad perferendis tempore veniam asperiores eveniet. Esse possimus perferendis voluptatibus.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus sit quis, unde aliquid mollitia.</p>
-        </div>
+        </section>
 
-        <div id="nosotros" class="mt-5">
+        <section id="nosotros" class="mt-5 px-3">
             <h1>nosotros</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, laudantium natus fugit ea facilis aliquam quo? Eum qui rerum quibusdam, inventore assumenda unde esse explicabo cumque veritatis, dolorum at accusantium?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquid temporibus id a explicabo eligendi autem nesciunt consectetur! Vel modi accusantium neque est quae, possimus veritatis unde porro laudantium similique?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusamus fuga velit vitae? Optio aspernatur reprehenderit vel nisi accusantium cupiditate omnis pariatur totam animi rerum, aperiam obcaecati aliquam blanditiis modi, et velit quae sequi incidunt at labore hic voluptates expedita.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nisi laboriosam, impedit necessitatibus inventore cum facere consequuntur. Molestias, velit amet.</p>
-        </div>
+        </section>
     </main>
 
     <script src="./js/landing.js" type="text/javascript"></script>

@@ -98,6 +98,11 @@ header {
     height: auto;
 }
 
+.navbar-toggler-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
 /* el scroll-margin-top se asegura de que la navegación no deje parte del contenido detras de la barra de navegación*/
 #landing, #viajemos, #galeria, #nosotros {
     scroll-margin-top: 5rem;
