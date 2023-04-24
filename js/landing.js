@@ -36,7 +36,7 @@ function navegar(e) {
  */
 function activarMenu() {
     const REM = 16;
-    const DESPLAZADO = 5 * REM;
+    const DESPLAZADO = 7 * REM;
     
     const li = document.querySelectorAll(".nav-item");
     const sec = document.querySelectorAll(".destino-nav");
