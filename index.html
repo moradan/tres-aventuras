@@ -16,7 +16,6 @@
     
     <!-- CSS Tres Aventuras -->
     <link href="./css/estilo-tres-aventuras.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/embed.css">
 </head>
 
 <body style="font-family: 'Outfit'">
@@ -48,9 +47,6 @@
                     <li class="nav-item">
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="detalles">detalles del viaje</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a onclick="navegar(event)" class="nav-link px-2" data-target="galeria">galeria</a>
-                    </li> -->
                     <li class="nav-item">
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="nosotros">quiénes somos</a>
                     </li>
@@ -60,18 +56,18 @@
     </header>
 
     <main class="container-fluid m-0 p-0">
-        <section id="landing" class="destino-nav row g-0 position-relative">
+        <section id="landing" class="destino-nav row mb-5 g-0 position-relative">
             <video id="video-incio" autoplay muted >
                 <source src="./videos/video-inicio-con-chevrones.mp4" type="video/mp4">
             </video>
         </section>
 
-        <section id="viajemos" class="destino-nav mt-5 px-3">
+        <section id="viajemos" class="destino-nav mb-5 px-3">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">
+                    <h2 class="card-title fw-bold">
                         próximo viaje
-                    </h1>
+                    </h2>
                     <p>
                         del sábado 22 de julio al sábado 29
                     </p>
@@ -80,31 +76,45 @@
             </div>
         </section>
 
-        <section id="detalles" class="destino-nav mt-5 px-3">
+        <section id="detalles" class="destino-nav mb-5 px-3">
             <div class="card">
-                <h1 class="card-title px-2">
-                    detalles
-                </h1>
-                <div class="card-bo">
-
+                <div class="card-body">
+                    <h2 class="card-title fw-bold">detalles</h2>
+                    <h3>fecha:</h3>
+                    <p>del sábado 22 de julio al sábado 29</p>
+                    <h3>lugar de encuentro:</h3>
+                    <p>Tilcara</p>
+                    <h3>itinerario:</h3>
+                    <ul>
+                       <li>La paleta del pintor, Maymará</li>
+                       <li>La cuenva de Huayra, Tilcara</li>
+                       <li>Purmamarca nocturna</li>
+                       <li>Iruya</li>
+                       <li>San Isidro</li> 
+                    </ul>
+                    <h3>incluye:</h3>
+                    <ul>
+                        <li>hospedaje</li>
+                        <li>comidas</li>
+                        <li>excursiones</li>
+                        <li>traslados locales</li>
+                    </ul>
+                    <footer><em>No incluye vuelos a Jujuy ni traslados entre el aeropuerto y Tilcara.</em></footer>
                 </div>
             </div>
         </section>
 
-        <!-- <section id="galeria" class="destino-nav mt-5 px-3">
-            <h1>galeria</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet beatae, dicta magnam quisquam excepturi, doloribus totam odio rerum deserunt perferendis eligendi placeat autem et ex minima impedit saepe ullam reprehenderit!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nostrum, nulla velit ab vel delectus repellat quia quibusdam, quis quaerat dolore voluptatum corporis dolores voluptatibus, id odit! Aperiam, inventore dignissimos.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias libero numquam provident assumenda voluptatum dolore ipsa eaque soluta deleniti, earum rerum, culpa omnis officia ad perferendis tempore veniam asperiores eveniet. Esse possimus perferendis voluptatibus.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus sit quis, unde aliquid mollitia.</p>
-        </section> -->
-
-        <section id="nosotros" class="destino-nav mt-5 px-3">
-            <h1>nosotros</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, laudantium natus fugit ea facilis aliquam quo? Eum qui rerum quibusdam, inventore assumenda unde esse explicabo cumque veritatis, dolorum at accusantium?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquid temporibus id a explicabo eligendi autem nesciunt consectetur! Vel modi accusantium neque est quae, possimus veritatis unde porro laudantium similique?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusamus fuga velit vitae? Optio aspernatur reprehenderit vel nisi accusantium cupiditate omnis pariatur totam animi rerum, aperiam obcaecati aliquam blanditiis modi, et velit quae sequi incidunt at labore hic voluptates expedita.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nisi laboriosam, impedit necessitatibus inventore cum facere consequuntur. Molestias, velit amet.</p>
+        <section id="nosotros" class="destino-nav mb-5 px-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title fw-bold">somos tres aventuras</h2>
+                    <p>Somos una empresa de Viajes y Turismo (EVyT) especializada en actividades al aire libre y en la naturaleza.</p>
+                    <p>Todas nuestras propuestas se basan en acompañar a grupos a disfrutar de la aventura. </p>
+                    <p>Hemos viajado al norte (Salta, Jujuy), Tres Picos (Sierra de la ventana), Córdoba, Patagonia, Entre Ríos, Mendoza y más.</p>
+                    <p>Cada viaje tiene sus características particulares. En algunos viajes disfrutamos del rafting, escalada, noches de tragos; en otros disfrutamos del trekking y del habitar la montaña; en otros, cuando hemos viajado con equipos deportivos o de trabajo, focalizamos la cohesión grupal del Equipo a través de la aventura y la naturaleza.</p>
+                </div>
+                <img src="./imagenes/foto-la-cruz.bmp" alt="foto grupal en La Cruz, Córdoba" class="card-img">
+            </div>
         </section>
     </main>
 
