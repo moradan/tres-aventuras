@@ -104,6 +104,10 @@ header {
 }
 
 /* el scroll-margin-top se asegura de que la navegación no deje parte del contenido detras de la barra de navegación*/
-#landing, #viajemos, #galeria, #nosotros {
+.destino-nav {
     scroll-margin-top: 5rem;
+}
+
+.sombra {
+    box-shadow: 0 0.2rem 2rem 1rem rgba(0,0,0,0.8);
 }

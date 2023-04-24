@@ -20,7 +20,7 @@
 </head>
 
 <body style="font-family: 'Outfit'">
-    <header class="container-fluid position-sticky top-0 primario m-0 p-0">
+    <header class="container-fluid position-sticky top-0 primario sombra m-0 p-0">
         <div class="navbar navbar-expand-md d-flex align-items-stretch m-0 py-0 ps-1">
             <a onclick="navegar(event)" class="navbar-brand col-6 col-md-5 col-lg-4 py-0" data-target="landing">
                 <img id="img-brand" src="./imagenes/logo-linea.svg" alt="ir al inicio">
@@ -46,8 +46,11 @@
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="viajemos">vamos de viaje</a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="navegar(event)" class="nav-link px-2" data-target="galeria">galeria</a>
+                        <a onclick="navegar(event)" class="nav-link px-2" data-target="detalles">detalles del viaje</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a onclick="navegar(event)" class="nav-link px-2" data-target="galeria">galeria</a>
+                    </li> -->
                     <li class="nav-item">
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="nosotros">quiénes somos</a>
                     </li>
@@ -57,29 +60,46 @@
     </header>
 
     <main class="container-fluid m-0 p-0">
-        <section id="landing" class="row g-0 position-relative">
+        <section id="landing" class="destino-nav row g-0 position-relative">
             <video id="video-incio" autoplay muted >
                 <source src="./videos/video-inicio-con-chevrones.mp4" type="video/mp4">
             </video>
         </section>
 
-        <section id="viajemos" class="mt-5 px-3">
-            <h1>viajemos</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laboriosam soluta ullam tempora, eius ea perspiciatis sunt aliquid nostrum itaque aspernatur magnam unde, fuga ad? Sint asperiores omnis quo aliquam.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam, ex eos molestiae sit nulla repellat accusamus veniam. Ea aperiam ipsa non esse quos fugiat omnis repellendus quibusdam possimus sunt?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quasi inventore eligendi repellat repellendus id nam, illo similique aperiam saepe explicabo quaerat aliquam tempore dicta fuga culpa eveniet et aut alias voluptates perspiciatis. Ratione sequi omnis ab eligendi aut reiciendis?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi.</p>
+        <section id="viajemos" class="destino-nav mt-5 px-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">
+                        próximo viaje
+                    </h1>
+                    <p>
+                        del sábado 22 de julio al sábado 29
+                    </p>
+                </div>
+                <img src="./imagenes/viaje norte.jpg" alt="foto de tilcara" class="card-img">
+            </div>
         </section>
 
-        <section id="galeria" class="mt-5 px-3">
+        <section id="detalles" class="destino-nav mt-5 px-3">
+            <div class="card">
+                <h1 class="card-title px-2">
+                    detalles
+                </h1>
+                <div class="card-bo">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="galeria" class="destino-nav mt-5 px-3">
             <h1>galeria</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet beatae, dicta magnam quisquam excepturi, doloribus totam odio rerum deserunt perferendis eligendi placeat autem et ex minima impedit saepe ullam reprehenderit!</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nostrum, nulla velit ab vel delectus repellat quia quibusdam, quis quaerat dolore voluptatum corporis dolores voluptatibus, id odit! Aperiam, inventore dignissimos.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias libero numquam provident assumenda voluptatum dolore ipsa eaque soluta deleniti, earum rerum, culpa omnis officia ad perferendis tempore veniam asperiores eveniet. Esse possimus perferendis voluptatibus.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus sit quis, unde aliquid mollitia.</p>
-        </section>
+        </section> -->
 
-        <section id="nosotros" class="mt-5 px-3">
+        <section id="nosotros" class="destino-nav mt-5 px-3">
             <h1>nosotros</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, laudantium natus fugit ea facilis aliquam quo? Eum qui rerum quibusdam, inventore assumenda unde esse explicabo cumque veritatis, dolorum at accusantium?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquid temporibus id a explicabo eligendi autem nesciunt consectetur! Vel modi accusantium neque est quae, possimus veritatis unde porro laudantium similique?</p>
