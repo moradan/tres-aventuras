@@ -38,17 +38,22 @@ function activarMenu() {
     const REM = 16;
     const DESPLAZADO = 7 * REM;
     
-    const li = document.querySelectorAll(".nav-item");
-    const sec = document.querySelectorAll(".destino-nav");
+    const itemsNavegacion = document.querySelectorAll(".nav-item");
+    const destinosNavegacion = document.querySelectorAll(".destino-nav");
 
-    let len = sec.length;
+    let cantidadDestinos = destinosNavegacion.length;
+    let destinoActual = 0;
 
+    while(destinoActual < cantidadDestinos && destinosNavegacion[destinoActual].offsetTop + DESPLAZADO < window.scrollY) {
+        destinoActual++;
+    }
 
-    while(--len && window.scrollY + DESPLAZADO < sec[len].offsetTop) {}
-    li.forEach((link) => {link.classList.remove("secundario")});
-    
-    if (len > 0) {
-        li[len - 1].classList.add("secundario");
+    for (const item of itemsNavegacion) {
+        item.classList.remove("secundario");
+    }
+
+    if (destinoActual > 0) {
+        itemsNavegacion[destinoActual - 1].classList.add("secundario");
     }
 }
 
