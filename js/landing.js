@@ -36,24 +36,28 @@ function navegar(e) {
  */
 function activarMenu() {
     const REM = 16;
-    const DESPLAZADO = 7 * REM;
+    const DESPLAZADO = 15 * REM;
     
-    const itemsNavegacion = document.querySelectorAll(".nav-item");
+    const linksNavegacion = document.querySelectorAll(".nav-item");
     const destinosNavegacion = document.querySelectorAll(".destino-nav");
+    const quiebresY = [];
 
-    let cantidadDestinos = destinosNavegacion.length;
-    let destinoActual = 0;
-
-    while(destinoActual < cantidadDestinos && destinosNavegacion[destinoActual].offsetTop + DESPLAZADO < window.scrollY) {
-        destinoActual++;
+    for (const destino of destinosNavegacion) {
+        const quiebreY = destino.offsetTop - DESPLAZADO;
+        quiebresY.push(quiebreY);
+    }
+    
+    let seccion = 0;
+    while (scrollY >= quiebresY[seccion + 1]) {
+        seccion++;
     }
 
-    for (const item of itemsNavegacion) {
-        item.classList.remove("secundario");
+    for (const link of linksNavegacion) {
+        link.classList.remove("secundario");
     }
 
-    if (destinoActual > 0) {
-        itemsNavegacion[destinoActual - 1].classList.add("secundario");
+    if (seccion > 0) {
+        linksNavegacion[seccion - 1].classList.add("secundario");
     }
 }
 
