@@ -53,8 +53,8 @@
                     <li class="nav-item">
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="viajemos">vamos de viaje</a>
                     </li>
-                    <li class="nav-item">
-                        <a onclick="navegar(event)" class="nav-link px-2" data-target="detalles">detalles del viaje</a>
+                    <li class="navbar-nav align-self-stretch fs-5 fw-bold">
+                        <a onclick="navegar(event)" class="nav-link px-2 d-md-none" data-target="detalles">detalles</a>
                     </li>
                     <li class="nav-item">
                         <a onclick="navegar(event)" class="nav-link px-2" data-target="nosotros">quiénes somos</a>
@@ -71,47 +71,52 @@
             </video>
         </section>
 
-        <section id="viajemos" class="destino-nav mb-5 px-3">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title fw-bold">
-                        próximo viaje
-                    </h2>
-                    <p>
-                        del sábado 22 de julio al sábado 29
-                    </p>
-                </div>
-                <img src="./imagenes/viaje norte.jpg" alt="foto de tilcara" class="card-img">
+        <div class="container-fluid">
+            <div class="row g-3">
+                <section id="viajemos" class="destino-nav mb-5 col-12 col-md-6 px-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title fw-bold">
+                                norte aventura - julio 2023
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                del sábado 22 de julio al sábado 29
+                            </h3>
+                        </div>
+                        <img src="./imagenes/viaje norte.jpg" alt="foto de tilcara" class="card-img">
+                    </div>
+                </section>
+                <section id="detalles" class="destino-nav mb-5 col-12 col-md-6 px-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold">detalles</h2>
+                            <h3>fecha:</h3>
+                            <p>del sábado 22 de julio al sábado 29</p>
+                            <h3>lugar de encuentro:</h3>
+                            <p>Tilcara</p>
+                            <h3>itinerario:</h3>
+                            <ul>
+                               <li>La paleta del pintor, Maymará</li>
+                               <li>La cuenva de Huayra, Tilcara</li>
+                               <li>Purmamarca nocturna</li>
+                               <li>Iruya</li>
+                               <li>San Isidro</li>
+                            </ul>
+                            <h3>incluye:</h3>
+                            <ul>
+                                <li>hospedaje</li>
+                                <li>comidas</li>
+                                <li>excursiones</li>
+                                <li>traslados locales</li>
+                            </ul>
+                            <footer><em>No incluye vuelos a Jujuy ni traslados entre el aeropuerto y Tilcara.</em></footer>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-
-        <section id="detalles" class="destino-nav mb-5 px-3">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title fw-bold">detalles</h2>
-                    <h3>fecha:</h3>
-                    <p>del sábado 22 de julio al sábado 29</p>
-                    <h3>lugar de encuentro:</h3>
-                    <p>Tilcara</p>
-                    <h3>itinerario:</h3>
-                    <ul>
-                       <li>La paleta del pintor, Maymará</li>
-                       <li>La cuenva de Huayra, Tilcara</li>
-                       <li>Purmamarca nocturna</li>
-                       <li>Iruya</li>
-                       <li>San Isidro</li> 
-                    </ul>
-                    <h3>incluye:</h3>
-                    <ul>
-                        <li>hospedaje</li>
-                        <li>comidas</li>
-                        <li>excursiones</li>
-                        <li>traslados locales</li>
-                    </ul>
-                    <footer><em>No incluye vuelos a Jujuy ni traslados entre el aeropuerto y Tilcara.</em></footer>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <section id="nosotros" class="destino-nav mb-5 px-3">
             <div class="card">
