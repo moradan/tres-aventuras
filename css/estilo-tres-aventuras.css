@@ -14,7 +14,8 @@ header {
 /** Esquema de colores */
 :root {
     --primario: #f2b933;
-    --primario-transparente: rgb(242, 185, 51, 0.8);
+    --primario-transparente: rgb(242, 185, 51, 0.95);
+    --primario-alternativo: rgb(172, 128, 34);
     --secundario: #000;
     --fondo: #222;
     --fondo-transparente: rgba(0, 0, 0, 0.8);
@@ -46,6 +47,11 @@ header {
 .primario {
     background-color: var(--primario);
     color: var(--en-primario);
+}
+
+.primario-transparente {
+    background-color: var(--primario-transparente);
+    color: var(--en-secundario)
 }
 
 .secundario {
@@ -90,6 +96,10 @@ header {
 /* se asegura que el texto del nav-link resaltado (secundario) no pase a negro (que no se veria) on hover */
 .secundario .nav-link {
     color: white;
+}
+
+.nav-item.secundario {
+    border-bottom: solid 0.2rem var(--primario-alternativo);
 }
 
 /* fija el tamaño del logo de marca*/
