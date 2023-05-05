@@ -126,7 +126,7 @@ header {
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: calc(100vh - 11rem);
+    max-height: calc(100vh - 15rem);
 }
 
 #viajemos p {
