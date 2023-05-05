@@ -121,3 +121,14 @@ header {
 .sombra {
     box-shadow: 0 0.2rem 2rem 1rem rgba(0,0,0,0.8);
 }
+
+.img-versatil {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 11rem);
+}
+
+#viajemos p {
+    margin-bottom: 0;
+}
